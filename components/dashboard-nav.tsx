@@ -19,43 +19,43 @@ export function DashboardNav({ className, ...props }: NavProps) {
       <Link href="/projects">
         <Button variant="ghost" className="w-full justify-start">
           <FileText className="mr-2 h-4 w-4" />
-          Proyectos
+          Projects
         </Button>
       </Link>
       <Link href="/tasks">
         <Button variant="ghost" className="w-full justify-start">
           <CheckSquare className="mr-2 h-4 w-4" />
-          Tareas
+          Tasks
         </Button>
       </Link>
       <Link href="/team">
         <Button variant="ghost" className="w-full justify-start">
           <Users className="mr-2 h-4 w-4" />
-          Equipo
+          Team
         </Button>
       </Link>
       <Link href="/calendar">
         <Button variant="ghost" className="w-full justify-start">
           <Calendar className="mr-2 h-4 w-4" />
-          Calendario
+          Calendar
         </Button>
       </Link>
       <Link href="/resources">
         <Button variant="ghost" className="w-full justify-start">
           <Clock className="mr-2 h-4 w-4" />
-          Recursos
+          Resources
         </Button>
       </Link>
       <Link href="/analytics">
         <Button variant="ghost" className="w-full justify-start">
           <BarChart3 className="mr-2 h-4 w-4" />
-          Analíticas
+          Analytics
         </Button>
       </Link>
       <Link href="/settings">
         <Button variant="ghost" className="w-full justify-start">
           <Settings className="mr-2 h-4 w-4" />
-          Configuración
+          Settings
         </Button>
       </Link>
     </div>

@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={inter.className} cz-shortcut-listen="true">
         <DataProvider>{children}</DataProvider>
       </body>
     </html>
