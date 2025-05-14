@@ -27,6 +27,7 @@ export function DashboardNav({ className, ...props }: NavProps) {
           <CheckSquare className="mr-2 h-4 w-4" />
           Tasks
         </Button>
+        
       </Link>
       <Link href="/team">
         <Button variant="ghost" className="w-full justify-start">

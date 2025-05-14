@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react" // Explicitly import React
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Save, X } from "lucide-react"
@@ -17,7 +15,7 @@ import { DatePicker } from "@/components/date-picker"
 import { DashboardNav } from "@/components/dashboard-nav"
 import { useData } from "@/contexts/DataContext"
 
-export default function EditProjectPage({ params }: { params: { id: string } }) {
+export default function EditProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter()
   const { projects, editProject } = useData()
   const [projectData, setProjectData] = useState({
@@ -28,12 +26,15 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
     status: "",
   })
 
+  // Unwrap the `params` Promise
+  const unwrappedParams = React.use(params)
+
   useEffect(() => {
-    const project = projects.find((p) => p.id === params.id)
+    const project = projects.find((p) => p.id === unwrappedParams.id)
     if (project) {
       setProjectData(project)
     }
-  }, [params.id, projects])
+  }, [unwrappedParams.id, projects])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -52,25 +53,25 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    editProject(params.id, projectData)
+    editProject(unwrappedParams.id, projectData)
     router.push("/projects")
   }
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header y navegación... */}
+      {/* Header and Navigation */}
       <div className="grid flex-1 md:grid-cols-[220px_1fr]">
         <aside className="hidden border-r bg-muted/40 md:block">
           <DashboardNav />
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Editar Proyecto</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Edit Project</h1>
             <div className="flex items-center gap-2">
               <Link href="/projects">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -79,53 +80,56 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Información del Proyecto</CardTitle>
-                <CardDescription>Edita los detalles del proyecto</CardDescription>
+                <CardTitle>Project Information</CardTitle>
+                <CardDescription>Edit the project details</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="title">Nombre del Proyecto</Label>
+                  <Label htmlFor="title">Project Name</Label>
                   <Input
                     id="title"
                     name="title"
                     value={projectData.title}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el nombre del proyecto"
+                    placeholder="Enter the project name"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="description">Descripción</Label>
+                  <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     name="description"
                     value={projectData.description}
                     onChange={handleInputChange}
-                    placeholder="Describe el proyecto y sus objetivos"
+                    placeholder="Describe the project and its objectives"
                   />
                 </div>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="grid gap-2">
-                    <Label htmlFor="startDate">Fecha de Inicio</Label>
+                    <Label htmlFor="startDate">Start Date</Label>
                     <DatePicker
                       onSelect={handleDateChange("startDate")}
                       defaultDate={new Date(projectData.startDate)}
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="endDate">Fecha de Finalización</Label>
-                    <DatePicker onSelect={handleDateChange("endDate")} defaultDate={new Date(projectData.endDate)} />
+                    <Label htmlFor="endDate">End Date</Label>
+                    <DatePicker
+                      onSelect={handleDateChange("endDate")}
+                      defaultDate={new Date(projectData.endDate)}
+                    />
                   </div>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="status">Estado</Label>
+                  <Label htmlFor="status">Status</Label>
                   <Select onValueChange={handleSelectChange("status")} defaultValue={projectData.status}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona el estado" />
+                      <SelectValue placeholder="Select the status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="planning">Planificación</SelectItem>
-                      <SelectItem value="in-progress">En Progreso</SelectItem>
-                      <SelectItem value="completed">Completado</SelectItem>
+                      <SelectItem value="planning">Planning</SelectItem>
+                      <SelectItem value="in-progress">In Progress</SelectItem>
+                      <SelectItem value="completed">Completed</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -133,7 +137,7 @@ export default function EditProjectPage({ params }: { params: { id: string } }) 
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Guardar Cambios
+                  Save Changes
                 </Button>
               </CardFooter>
             </form>

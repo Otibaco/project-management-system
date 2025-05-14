@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Save, X } from "lucide-react"
@@ -17,36 +15,47 @@ import { DatePicker } from "@/components/date-picker"
 import { DashboardNav } from "@/components/dashboard-nav"
 import { useData } from "@/contexts/DataContext"
 
-export default function NewProjectPage() {
+export default function EditTaskPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter()
-  const { addProject } = useData()
-  const [projectData, setProjectData] = useState({
+  const { tasks, editTask } = useData()
+  const [taskData, setTaskData] = useState({
     title: "",
     description: "",
-    startDate: "",
-    endDate: "",
+    projectId: "",
+    assignedTo: "",
+    dueDate: "",
     status: "",
   })
 
+  // Unwrap the `params` Promise
+  const unwrappedParams = React.use(params)
+
+  useEffect(() => {
+    const task = tasks.find((t) => t.id === unwrappedParams.id)
+    if (task) {
+      setTaskData(task)
+    }
+  }, [unwrappedParams.id, tasks])
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setProjectData((prev) => ({ ...prev, [name]: value }))
+    setTaskData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSelectChange = (name: string) => (value: string) => {
-    setProjectData((prev) => ({ ...prev, [name]: value }))
+    setTaskData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleDateChange = (name: string) => (date: Date | undefined) => {
+  const handleDateChange = (date: Date | undefined) => {
     if (date) {
-      setProjectData((prev) => ({ ...prev, [name]: date.toISOString() }))
+      setTaskData((prev) => ({ ...prev, dueDate: date.toISOString() }))
     }
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    addProject(projectData)
-    router.push("/projects")
+    editTask(unwrappedParams.id, taskData)
+    router.push("/tasks")
   }
 
   return (
@@ -58,9 +67,9 @@ export default function NewProjectPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">New Project</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Edit Task</h1>
             <div className="flex items-center gap-2">
-              <Link href="/projects">
+              <Link href="/tasks">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
                   Cancel
@@ -72,18 +81,18 @@ export default function NewProjectPage() {
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Project Information</CardTitle>
-                <CardDescription>Enter the basic details of the new project</CardDescription>
+                <CardTitle>Task Information</CardTitle>
+                <CardDescription>Edit the task details</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="title">Project Name</Label>
+                  <Label htmlFor="title">Task Title</Label>
                   <Input
                     id="title"
                     name="title"
-                    value={projectData.title}
+                    value={taskData.title}
                     onChange={handleInputChange}
-                    placeholder="Enter the project name"
+                    placeholder="Enter the task title"
                   />
                 </div>
                 <div className="grid gap-2">
@@ -91,29 +100,49 @@ export default function NewProjectPage() {
                   <Textarea
                     id="description"
                     name="description"
-                    value={projectData.description}
+                    value={taskData.description}
                     onChange={handleInputChange}
-                    placeholder="Describe the project and its objectives"
+                    placeholder="Describe the task"
                   />
                 </div>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="grid gap-2">
-                    <Label htmlFor="startDate">Start Date</Label>
-                    <DatePicker onSelect={handleDateChange("startDate")} />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="endDate">End Date</Label>
-                    <DatePicker onSelect={handleDateChange("endDate")} />
-                  </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="projectId">Project</Label>
+                  <Select onValueChange={handleSelectChange("projectId")} defaultValue={taskData.projectId}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a project" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {/* Replace with actual project data */}
+                      <SelectItem value="project1">Project 1</SelectItem>
+                      <SelectItem value="project2">Project 2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="assignedTo">Assigned To</Label>
+                  <Select onValueChange={handleSelectChange("assignedTo")} defaultValue={taskData.assignedTo}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a team member" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {/* Replace with actual team member data */}
+                      <SelectItem value="member1">Member 1</SelectItem>
+                      <SelectItem value="member2">Member 2</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="dueDate">Due Date</Label>
+                  <DatePicker onSelect={handleDateChange} defaultDate={new Date(taskData.dueDate)} />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="status">Status</Label>
-                  <Select onValueChange={handleSelectChange("status")}>
+                  <Select onValueChange={handleSelectChange("status")} defaultValue={taskData.status}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select the status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="planning">Planning</SelectItem>
+                      <SelectItem value="pending">Pending</SelectItem>
                       <SelectItem value="in-progress">In Progress</SelectItem>
                       <SelectItem value="completed">Completed</SelectItem>
                     </SelectContent>
@@ -123,7 +152,7 @@ export default function NewProjectPage() {
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Save Project
+                  Save Changes
                 </Button>
               </CardFooter>
             </form>

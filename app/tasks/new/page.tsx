@@ -52,19 +52,19 @@ export default function NewTaskPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header y navegación... */}
+      {/* Header and Navigation */}
       <div className="grid flex-1 md:grid-cols-[220px_1fr]">
         <aside className="hidden border-r bg-muted/40 md:block">
           <DashboardNav />
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Nueva Tarea</h1>
+            <h1 className="text-3xl font-bold tracking-tight">New Task</h1>
             <div className="flex items-center gap-2">
               <Link href="/tasks">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -73,35 +73,35 @@ export default function NewTaskPage() {
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Información de la Tarea</CardTitle>
-                <CardDescription>Ingresa los detalles de la nueva tarea</CardDescription>
+                <CardTitle>Task Information</CardTitle>
+                <CardDescription>Enter the details of the new task</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="title">Título de la Tarea</Label>
+                  <Label htmlFor="title">Task Title</Label>
                   <Input
                     id="title"
                     name="title"
                     value={taskData.title}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el título de la tarea"
+                    placeholder="Enter the task title"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="description">Descripción</Label>
+                  <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     name="description"
                     value={taskData.description}
                     onChange={handleInputChange}
-                    placeholder="Describe la tarea"
+                    placeholder="Describe the task"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="projectId">Proyecto</Label>
+                  <Label htmlFor="projectId">Project</Label>
                   <Select onValueChange={handleSelectChange("projectId")}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un proyecto" />
+                      <SelectValue placeholder="Select a project" />
                     </SelectTrigger>
                     <SelectContent>
                       {projects.map((project) => (
@@ -113,10 +113,10 @@ export default function NewTaskPage() {
                   </Select>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="assignedTo">Asignado a</Label>
+                  <Label htmlFor="assignedTo">Assigned To</Label>
                   <Select onValueChange={handleSelectChange("assignedTo")}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un miembro del equipo" />
+                      <SelectValue placeholder="Select a team member" />
                     </SelectTrigger>
                     <SelectContent>
                       {teamMembers.map((member) => (
@@ -128,19 +128,19 @@ export default function NewTaskPage() {
                   </Select>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="dueDate">Fecha de Vencimiento</Label>
+                  <Label htmlFor="dueDate">Due Date</Label>
                   <DatePicker onSelect={handleDateChange} />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="status">Estado</Label>
+                  <Label htmlFor="status">Status</Label>
                   <Select onValueChange={handleSelectChange("status")}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona el estado" />
+                      <SelectValue placeholder="Select the status" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="pending">Pendiente</SelectItem>
-                      <SelectItem value="in-progress">En Progreso</SelectItem>
-                      <SelectItem value="completed">Completado</SelectItem>
+                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="in-progress">In Progress</SelectItem>
+                      <SelectItem value="completed">Completed</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -148,7 +148,7 @@ export default function NewTaskPage() {
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Guardar Tarea
+                  Save Task
                 </Button>
               </CardFooter>
             </form>

@@ -14,19 +14,19 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header y navegación... */}
+      {/* Header and Navigation */}
       <div className="grid flex-1 md:grid-cols-[220px_1fr]">
         <aside className="hidden border-r bg-muted/40 md:block">
           <DashboardNav />
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Proyectos</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
             <div className="flex items-center gap-2">
               <Link href="/projects/new">
                 <Button>
                   <Plus className="mr-2 h-4 w-4" />
-                  Nuevo Proyecto
+                  New Project
                 </Button>
               </Link>
             </div>
@@ -35,22 +35,22 @@ export default function ProjectsPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="relative w-full sm:w-80">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input placeholder="Buscar proyectos..." className="pl-8" />
+              <Input placeholder="Search projects..." className="pl-8" />
             </div>
             <Button variant="outline" size="sm" className="h-9">
               <Filter className="mr-2 h-4 w-4" />
-              Filtrar
+              Filter
             </Button>
           </div>
 
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Nombre</TableHead>
-                <TableHead>Estado</TableHead>
-                <TableHead>Fecha de Inicio</TableHead>
-                <TableHead>Fecha de Finalización</TableHead>
-                <TableHead>Acciones</TableHead>
+                <TableHead>Name</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Start Date</TableHead>
+                <TableHead>End Date</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
