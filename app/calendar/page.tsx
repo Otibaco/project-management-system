@@ -31,12 +31,12 @@ export default function CalendarPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Calendario</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Calendar</h1>
             <div className="flex items-center gap-2">
               <Link href="/calendar/event/new">
                 <Button>
                   <Plus className="mr-2 h-4 w-4" />
-                  Nuevo Evento
+                  New Event
                 </Button>
               </Link>
             </div>
@@ -47,7 +47,7 @@ export default function CalendarPage() {
               <Button variant="outline" size="icon">
                 <ChevronLeft className="h-4 w-4" />
               </Button>
-              <h2 className="text-xl font-semibold">Marzo 2025</h2>
+              <h2 className="text-xl font-semibold">March 2025</h2>
               <Button variant="outline" size="icon">
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -55,12 +55,12 @@ export default function CalendarPage() {
             <div className="flex items-center gap-2">
               <Select defaultValue="month">
                 <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Vista" />
+                  <SelectValue placeholder="View" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="day">Día</SelectItem>
-                  <SelectItem value="week">Semana</SelectItem>
-                  <SelectItem value="month">Mes</SelectItem>
+                  <SelectItem value="day">Day</SelectItem>
+                  <SelectItem value="week">Week</SelectItem>
+                  <SelectItem value="month">Month</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -73,14 +73,14 @@ export default function CalendarPage() {
           </Card>
 
           <div className="mt-6">
-            <h2 className="text-2xl font-semibold mb-4">Eventos Próximos</h2>
+            <h2 className="text-2xl font-semibold mb-4">Upcoming Events</h2>
             <table className="w-full">
               <thead>
                 <tr>
-                  <th className="text-left">Título</th>
-                  <th className="text-left">Fecha</th>
-                  <th className="text-left">Proyecto</th>
-                  <th className="text-left">Acciones</th>
+                  <th className="text-left">Title</th>
+                  <th className="text-left">Date</th>
+                  <th className="text-left">Project</th>
+                  <th className="text-left">Actions</th>
                 </tr>
               </thead>
               <tbody>

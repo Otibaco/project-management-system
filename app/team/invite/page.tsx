@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { BarChart3, Send, X } from "lucide-react"
 
@@ -23,16 +25,16 @@ export default function InviteMemberPage() {
               Dashboard
             </Link>
             <Link href="/projects" className="text-sm font-medium transition-colors hover:text-primary">
-              Proyectos
+              Projects
             </Link>
             <Link href="/tasks" className="text-sm font-medium transition-colors hover:text-primary">
-              Tareas
+              Tasks
             </Link>
             <Link href="/team" className="text-sm font-medium text-primary">
-              Equipo
+              Team
             </Link>
             <Link href="/resources" className="text-sm font-medium transition-colors hover:text-primary">
-              Recursos
+              Resources
             </Link>
           </nav>
           <UserNav />
@@ -44,12 +46,12 @@ export default function InviteMemberPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Invitar Miembro</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Invite Member</h1>
             <div className="flex items-center gap-2">
               <Link href="/team">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -57,57 +59,57 @@ export default function InviteMemberPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Invitar Nuevo Miembro</CardTitle>
-              <CardDescription>Envía invitaciones a nuevos miembros para unirse a tu equipo</CardDescription>
+              <CardTitle>Invite New Member</CardTitle>
+              <CardDescription>Send invitations to new members to join your team</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="emails">Correos Electrónicos</Label>
+                <Label htmlFor="emails">Email Addresses</Label>
                 <Textarea
                   id="emails"
-                  placeholder="Ingresa las direcciones de correo electrónico separadas por comas"
+                  placeholder="Enter email addresses separated by commas"
                   className="min-h-[100px]"
                 />
                 <p className="text-sm text-muted-foreground">
-                  Puedes invitar a múltiples personas a la vez separando sus correos con comas.
+                  You can invite multiple people at once by separating their emails with commas.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="role">Rol</Label>
+                <Label htmlFor="role">Role</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona un rol" />
+                    <SelectValue placeholder="Select a role" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="member">Miembro</SelectItem>
-                    <SelectItem value="admin">Administrador</SelectItem>
-                    <SelectItem value="viewer">Visualizador</SelectItem>
+                    <SelectItem value="member">Member</SelectItem>
+                    <SelectItem value="admin">Admin</SelectItem>
+                    <SelectItem value="viewer">Viewer</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="department">Departamento</Label>
+                <Label htmlFor="department">Department</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecciona un departamento" />
+                    <SelectValue placeholder="Select a department" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="technology">Tecnología</SelectItem>
-                    <SelectItem value="design">Diseño</SelectItem>
+                    <SelectItem value="technology">Technology</SelectItem>
+                    <SelectItem value="design">Design</SelectItem>
                     <SelectItem value="marketing">Marketing</SelectItem>
-                    <SelectItem value="sales">Ventas</SelectItem>
-                    <SelectItem value="hr">Recursos Humanos</SelectItem>
+                    <SelectItem value="sales">Sales</SelectItem>
+                    <SelectItem value="hr">Human Resources</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Mensaje Personalizado (opcional)</Label>
+                <Label htmlFor="message">Custom Message (optional)</Label>
                 <Textarea
                   id="message"
-                  placeholder="Escribe un mensaje personalizado para incluir en la invitación"
+                  placeholder="Write a custom message to include in the invitation"
                   className="min-h-[100px]"
                 />
               </div>
@@ -115,11 +117,11 @@ export default function InviteMemberPage() {
             <CardFooter className="flex justify-between">
               <Button variant="outline">
                 <X className="mr-2 h-4 w-4" />
-                Cancelar
+                Cancel
               </Button>
               <Button>
                 <Send className="mr-2 h-4 w-4" />
-                Enviar Invitaciones
+                Send Invitations
               </Button>
             </CardFooter>
           </Card>

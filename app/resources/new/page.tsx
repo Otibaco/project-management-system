@@ -58,12 +58,12 @@ export default function NewResourcePage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Nuevo Recurso</h1>
+            <h1 className="text-3xl font-bold tracking-tight">New Resource</h1>
             <div className="flex items-center gap-2">
               <Link href="/resources">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -72,50 +72,50 @@ export default function NewResourcePage() {
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Información del Recurso</CardTitle>
-                <CardDescription>Ingresa los detalles del nuevo recurso</CardDescription>
+                <CardTitle>Resource Information</CardTitle>
+                <CardDescription>Enter the details of the new resource</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="name">Nombre del Recurso</Label>
+                  <Label htmlFor="name">Resource Name</Label>
                   <Input
                     id="name"
                     name="name"
                     value={resourceData.name}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el nombre del recurso"
+                    placeholder="Enter the resource name"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="type">Tipo de Recurso</Label>
+                  <Label htmlFor="type">Resource Type</Label>
                   <Select onValueChange={handleSelectChange("type")}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona el tipo de recurso" />
+                      <SelectValue placeholder="Select the resource type" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="hardware">Hardware</SelectItem>
                       <SelectItem value="software">Software</SelectItem>
-                      <SelectItem value="human">Humano</SelectItem>
-                      <SelectItem value="financial">Financiero</SelectItem>
+                      <SelectItem value="human">Human</SelectItem>
+                      <SelectItem value="financial">Financial</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="quantity">Cantidad</Label>
+                  <Label htmlFor="quantity">Quantity</Label>
                   <Input
                     id="quantity"
                     name="quantity"
                     type="number"
                     value={resourceData.quantity}
                     onChange={handleInputChange}
-                    placeholder="Ingresa la cantidad"
+                    placeholder="Enter the quantity"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="assignedTo">Asignado a</Label>
+                  <Label htmlFor="assignedTo">Assigned To</Label>
                   <Select onValueChange={handleSelectChange("assignedTo")}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un proyecto" />
+                      <SelectValue placeholder="Select a project" />
                     </SelectTrigger>
                     <SelectContent>
                       {projects.map((project) => (
@@ -130,7 +130,7 @@ export default function NewResourcePage() {
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Guardar Recurso
+                  Save Resource
                 </Button>
               </CardFooter>
             </form>

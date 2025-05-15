@@ -57,12 +57,12 @@ export default function NewTeamMemberPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Nuevo Miembro del Equipo</h1>
+            <h1 className="text-3xl font-bold tracking-tight">New Team Member</h1>
             <div className="flex items-center gap-2">
               <Link href="/team">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -71,41 +71,41 @@ export default function NewTeamMemberPage() {
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Información del Miembro</CardTitle>
-                <CardDescription>Ingresa los detalles del nuevo miembro del equipo</CardDescription>
+                <CardTitle>Member Information</CardTitle>
+                <CardDescription>Enter the details of the new team member</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="name">Nombre</Label>
+                  <Label htmlFor="name">Name</Label>
                   <Input
                     id="name"
                     name="name"
                     value={memberData.name}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el nombre del miembro"
+                    placeholder="Enter the member's name"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Correo Electrónico</Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     value={memberData.email}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el correo electrónico"
+                    placeholder="Enter the email address"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="role">Rol</Label>
+                  <Label htmlFor="role">Role</Label>
                   <Select onValueChange={handleSelectChange}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona el rol" />
+                      <SelectValue placeholder="Select a role" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="developer">Desarrollador</SelectItem>
-                      <SelectItem value="designer">Diseñador</SelectItem>
-                      <SelectItem value="manager">Gerente de Proyecto</SelectItem>
+                      <SelectItem value="developer">Developer</SelectItem>
+                      <SelectItem value="designer">Designer</SelectItem>
+                      <SelectItem value="manager">Project Manager</SelectItem>
                       <SelectItem value="tester">Tester</SelectItem>
                     </SelectContent>
                   </Select>
@@ -114,7 +114,7 @@ export default function NewTeamMemberPage() {
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Guardar Miembro
+                  Save Member
                 </Button>
               </CardFooter>
             </form>

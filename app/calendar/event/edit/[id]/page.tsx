@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect } from "react"
+import React,{ useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { BarChart3, Save, X } from "lucide-react"
@@ -18,7 +16,8 @@ import { DashboardNav } from "@/components/dashboard-nav"
 import { UserNav } from "@/components/user-nav"
 import { useData } from "@/contexts/DataContext"
 
-export default function EditEventPage({ params }: { params: { id: string } }) {
+
+export default function EditEventPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter()
   const { events, editEvent, projects } = useData()
   const [eventData, setEventData] = useState({
@@ -28,12 +27,15 @@ export default function EditEventPage({ params }: { params: { id: string } }) {
     projectId: "",
   })
 
+  // Unwrap the `params` Promise
+  const unwrappedParams = React.use(params)
+
   useEffect(() => {
-    const event = events.find((e) => e.id === params.id)
+    const event = events.find((e) => e.id === unwrappedParams.id)
     if (event) {
       setEventData(event)
     }
-  }, [events, params.id])
+  }, [events, unwrappedParams.id])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -52,7 +54,7 @@ export default function EditEventPage({ params }: { params: { id: string } }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    editEvent(params.id, eventData)
+    editEvent(unwrappedParams.id, eventData)
     router.push("/calendar")
   }
 
@@ -73,12 +75,12 @@ export default function EditEventPage({ params }: { params: { id: string } }) {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Editar Evento</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Edit Event</h1>
             <div className="flex items-center gap-2">
               <Link href="/calendar">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -87,39 +89,39 @@ export default function EditEventPage({ params }: { params: { id: string } }) {
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Información del Evento</CardTitle>
-                <CardDescription>Edita los detalles del evento</CardDescription>
+                <CardTitle>Event Information</CardTitle>
+                <CardDescription>Edit the details of the event</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="title">Título del Evento</Label>
+                  <Label htmlFor="title">Event Title</Label>
                   <Input
                     id="title"
                     name="title"
                     value={eventData.title}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el título del evento"
+                    placeholder="Enter the event title"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="description">Descripción</Label>
+                  <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     name="description"
                     value={eventData.description}
                     onChange={handleInputChange}
-                    placeholder="Describe el evento"
+                    placeholder="Describe the event"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="date">Fecha del Evento</Label>
+                  <Label htmlFor="date">Event Date</Label>
                   <DatePicker onSelect={handleDateChange} defaultDate={new Date(eventData.date)} />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="projectId">Proyecto Relacionado</Label>
+                  <Label htmlFor="projectId">Related Project</Label>
                   <Select onValueChange={handleSelectChange} defaultValue={eventData.projectId}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un proyecto" />
+                      <SelectValue placeholder="Select a project" />
                     </SelectTrigger>
                     <SelectContent>
                       {projects.map((project) => (
@@ -134,7 +136,7 @@ export default function EditEventPage({ params }: { params: { id: string } }) {
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Guardar Cambios
+                  Save Changes
                 </Button>
               </CardFooter>
             </form>

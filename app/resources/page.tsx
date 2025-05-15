@@ -30,12 +30,12 @@ export default function ResourcesPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Recursos</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Resources</h1>
             <div className="flex items-center gap-2">
               <Link href="/resources/new">
                 <Button>
                   <Plus className="mr-2 h-4 w-4" />
-                  Nuevo Recurso
+                  New Resource
                 </Button>
               </Link>
             </div>
@@ -44,22 +44,22 @@ export default function ResourcesPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="relative w-full sm:w-80">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input placeholder="Buscar recursos..." className="pl-8" />
+              <Input placeholder="Search resources..." className="pl-8" />
             </div>
             <Button variant="outline" size="sm" className="h-9">
               <Filter className="mr-2 h-4 w-4" />
-              Filtrar
+              Filter
             </Button>
           </div>
 
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Nombre</TableHead>
-                <TableHead>Tipo</TableHead>
-                <TableHead>Cantidad</TableHead>
-                <TableHead>Asignado a</TableHead>
-                <TableHead>Acciones</TableHead>
+                <TableHead>Name</TableHead>
+                <TableHead>Type</TableHead>
+                <TableHead>Quantity</TableHead>
+                <TableHead>Assigned To</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

@@ -66,12 +66,12 @@ export default function NewEventPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Nuevo Evento</h1>
+            <h1 className="text-3xl font-bold tracking-tight">New Event</h1>
             <div className="flex items-center gap-2">
               <Link href="/calendar">
                 <Button variant="outline">
                   <X className="mr-2 h-4 w-4" />
-                  Cancelar
+                  Cancel
                 </Button>
               </Link>
             </div>
@@ -80,39 +80,39 @@ export default function NewEventPage() {
           <Card>
             <form onSubmit={handleSubmit}>
               <CardHeader>
-                <CardTitle>Información del Evento</CardTitle>
-                <CardDescription>Ingresa los detalles del nuevo evento</CardDescription>
+                <CardTitle>Event Information</CardTitle>
+                <CardDescription>Enter the details of the new event</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="title">Título del Evento</Label>
+                  <Label htmlFor="title">Event Title</Label>
                   <Input
                     id="title"
                     name="title"
                     value={eventData.title}
                     onChange={handleInputChange}
-                    placeholder="Ingresa el título del evento"
+                    placeholder="Enter the event title"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="description">Descripción</Label>
+                  <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     name="description"
                     value={eventData.description}
                     onChange={handleInputChange}
-                    placeholder="Describe el evento"
+                    placeholder="Describe the event"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="date">Fecha del Evento</Label>
+                  <Label htmlFor="date">Event Date</Label>
                   <DatePicker onSelect={handleDateChange} />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="projectId">Proyecto Relacionado</Label>
+                  <Label htmlFor="projectId">Related Project</Label>
                   <Select onValueChange={handleSelectChange}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un proyecto" />
+                      <SelectValue placeholder="Select a project" />
                     </SelectTrigger>
                     <SelectContent>
                       {projects.map((project) => (
@@ -127,7 +127,7 @@ export default function NewEventPage() {
               <CardFooter className="flex justify-end">
                 <Button type="submit">
                   <Save className="mr-2 h-4 w-4" />
-                  Guardar Evento
+                  Save Event
                 </Button>
               </CardFooter>
             </form>

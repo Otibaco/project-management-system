@@ -30,12 +30,12 @@ export default function TeamPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Equipo</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Team</h1>
             <div className="flex items-center gap-2">
               <Link href="/team/new">
                 <Button>
                   <Plus className="mr-2 h-4 w-4" />
-                  Nuevo Miembro
+                  New Member
                 </Button>
               </Link>
             </div>
@@ -44,21 +44,21 @@ export default function TeamPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="relative w-full sm:w-80">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input placeholder="Buscar miembros..." className="pl-8" />
+              <Input placeholder="Search members..." className="pl-8" />
             </div>
             <Button variant="outline" size="sm" className="h-9">
               <Filter className="mr-2 h-4 w-4" />
-              Filtrar
+              Filter
             </Button>
           </div>
 
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Nombre</TableHead>
-                <TableHead>Correo Electrónico</TableHead>
-                <TableHead>Rol</TableHead>
-                <TableHead>Acciones</TableHead>
+                <TableHead>Name</TableHead>
+                <TableHead>Email</TableHead>
+                <TableHead>Role</TableHead>
+                <TableHead>Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
