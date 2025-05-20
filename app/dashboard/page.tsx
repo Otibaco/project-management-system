@@ -1,5 +1,8 @@
+"use client"
+
+import React, { useState } from "react"
 import Link from "next/link"
-import { BarChart3, Calendar, CheckSquare, Clock, Plus, Users } from "lucide-react"
+import { BarChart3, Calendar, CheckSquare, Clock, Plus, Users, Menu, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -10,10 +13,12 @@ import { ProjectCard } from "@/components/project-card"
 import { RecentActivity } from "@/components/recent-activity"
 
 export default function DashboardPage() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
+
   return (
     <div className="flex min-h-screen flex-col">
       <div className="grid flex-1 md:grid-cols-[220px_1fr]">
-        {/* Sidebar */}
+        {/* Sidebar for desktop */}
         <aside className="hidden border-r bg-muted/40 md:block">
           <DashboardNav />
         </aside>
@@ -21,16 +26,29 @@ export default function DashboardPage() {
         {/* Main Section */}
         <main className="flex flex-col gap-6 p-4 md:p-6">
           {/* Page Header */}
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Dashboard</h1>
-            <div className="flex items-center gap-2 md:ml-0">
-              <Link href="/projects/new">
-                <Button>
-                  <Plus className="mr-2 h-4 w-4" />
-                  New Project
+          <div className="flex items-center justify-between gap-2">
+            {/* Left: Menu (mobile) and Dashboard text */}
+            <div className="flex items-center gap-2">
+              {/* Mobile nav button */}
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setMobileNavOpen(true)}
+                  aria-label="Open navigation"
+                >
+                  <Menu className="h-6 w-6" />
                 </Button>
-              </Link>
+              </div>
+              <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Dashboard</h1>
             </div>
+            {/* Right: New Project button */}
+            <Link href="/projects/new">
+              <Button>
+                <Plus className="mr-2 h-4 w-4" />
+                <span className="sm:hidden">New Project</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Tabs Section */}
@@ -217,6 +235,32 @@ export default function DashboardPage() {
           </Tabs>
         </main>
       </div>
+
+      {/* Mobile Drawer for DashboardNav */}
+      {mobileNavOpen && (
+        <div className="fixed inset-0 z-50 flex md:hidden">
+          {/* Overlay */}
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setMobileNavOpen(false)}
+          />
+          {/* Drawer */}
+          <div className="relative bg-white w-64 h-full shadow-lg flex flex-col animate-slide-in-left">
+            <div className="flex items-center justify-between p-4 border-b">
+              <span className="font-bold text-xl">Menu</span>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Close Menu"
+                onClick={() => setMobileNavOpen(false)}
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
+            <DashboardNav />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
