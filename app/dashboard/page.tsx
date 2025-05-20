@@ -6,42 +6,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { DashboardNav } from "@/components/dashboard-nav"
-import { UserNav } from "@/components/user-nav"
 import { ProjectCard } from "@/components/project-card"
 import { RecentActivity } from "@/components/recent-activity"
 
 export default function DashboardPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <BarChart3 className="h-6 w-6" />
-            <span>ProjectPro</span>
-          </Link>
-          <nav className="hidden md:flex gap-4 lg:gap-6">
-            <Link href="/dashboard" className="text-sm font-medium text-primary">
-              Dashboard
-            </Link>
-            <Link href="/projects" className="text-sm font-medium transition-colors hover:text-primary">
-              Projects
-            </Link>
-            <Link href="/tasks" className="text-sm font-medium transition-colors hover:text-primary">
-              Tasks
-            </Link>
-            <Link href="/team" className="text-sm font-medium transition-colors hover:text-primary">
-              Team
-            </Link>
-            <Link href="/resources" className="text-sm font-medium transition-colors hover:text-primary">
-              Resources
-            </Link>
-          </nav>
-          <UserNav />
-        </div>
-      </header>
-
-      {/* Main Content */}
       <div className="grid flex-1 md:grid-cols-[220px_1fr]">
         {/* Sidebar */}
         <aside className="hidden border-r bg-muted/40 md:block">

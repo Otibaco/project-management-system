@@ -17,12 +17,12 @@ export function TeamTable() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Miembro</TableHead>
-          <TableHead>Rol</TableHead>
-          <TableHead>Departamento</TableHead>
-          <TableHead>Proyectos Asignados</TableHead>
-          <TableHead>Estado</TableHead>
-          <TableHead className="text-right">Acciones</TableHead>
+          <TableHead>Member</TableHead>
+          <TableHead>Role</TableHead>
+          <TableHead>Department</TableHead>
+          <TableHead>Assigned Projects</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead className="text-right">Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -35,16 +35,16 @@ export function TeamTable() {
               </Avatar>
               <div>
                 <div className="font-medium">Juan Pérez</div>
-                <div className="text-sm text-muted-foreground">juan.perez@ejemplo.com</div>
+                <div className="text-sm text-muted-foreground">juan.perez@example.com</div>
               </div>
             </div>
           </TableCell>
-          <TableCell>Gerente de Proyecto</TableCell>
-          <TableCell>Tecnología</TableCell>
+          <TableCell>Project Manager</TableCell>
+          <TableCell>Technology</TableCell>
           <TableCell>3</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              Activo
+              Active
             </Badge>
           </TableCell>
           <TableCell className="text-right">
@@ -55,12 +55,12 @@ export function TeamTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Perfil</DropdownMenuItem>
-                <DropdownMenuItem>Editar Rol</DropdownMenuItem>
-                <DropdownMenuItem>Asignar a Proyecto</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Profile</DropdownMenuItem>
+                <DropdownMenuItem>Edit Role</DropdownMenuItem>
+                <DropdownMenuItem>Assign to Project</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -74,16 +74,16 @@ export function TeamTable() {
               </Avatar>
               <div>
                 <div className="font-medium">Ana Pérez</div>
-                <div className="text-sm text-muted-foreground">ana.perez@ejemplo.com</div>
+                <div className="text-sm text-muted-foreground">ana.perez@example.com</div>
               </div>
             </div>
           </TableCell>
-          <TableCell>Diseñador UX/UI</TableCell>
-          <TableCell>Diseño</TableCell>
+          <TableCell>UX/UI Designer</TableCell>
+          <TableCell>Design</TableCell>
           <TableCell>2</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              Activo
+              Active
             </Badge>
           </TableCell>
           <TableCell className="text-right">
@@ -94,12 +94,12 @@ export function TeamTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Perfil</DropdownMenuItem>
-                <DropdownMenuItem>Editar Rol</DropdownMenuItem>
-                <DropdownMenuItem>Asignar a Proyecto</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Profile</DropdownMenuItem>
+                <DropdownMenuItem>Edit Role</DropdownMenuItem>
+                <DropdownMenuItem>Assign to Project</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -113,16 +113,16 @@ export function TeamTable() {
               </Avatar>
               <div>
                 <div className="font-medium">Carlos García</div>
-                <div className="text-sm text-muted-foreground">carlos.garcia@ejemplo.com</div>
+                <div className="text-sm text-muted-foreground">carlos.garcia@example.com</div>
               </div>
             </div>
           </TableCell>
-          <TableCell>Desarrollador Full Stack</TableCell>
-          <TableCell>Tecnología</TableCell>
+          <TableCell>Full Stack Developer</TableCell>
+          <TableCell>Technology</TableCell>
           <TableCell>4</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              Activo
+              Active
             </Badge>
           </TableCell>
           <TableCell className="text-right">
@@ -133,12 +133,12 @@ export function TeamTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Perfil</DropdownMenuItem>
-                <DropdownMenuItem>Editar Rol</DropdownMenuItem>
-                <DropdownMenuItem>Asignar a Proyecto</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Profile</DropdownMenuItem>
+                <DropdownMenuItem>Edit Role</DropdownMenuItem>
+                <DropdownMenuItem>Assign to Project</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -152,16 +152,16 @@ export function TeamTable() {
               </Avatar>
               <div>
                 <div className="font-medium">María Rodríguez</div>
-                <div className="text-sm text-muted-foreground">maria.rodriguez@ejemplo.com</div>
+                <div className="text-sm text-muted-foreground">maria.rodriguez@example.com</div>
               </div>
             </div>
           </TableCell>
-          <TableCell>Especialista en Marketing</TableCell>
+          <TableCell>Marketing Specialist</TableCell>
           <TableCell>Marketing</TableCell>
           <TableCell>2</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              Activo
+              Active
             </Badge>
           </TableCell>
           <TableCell className="text-right">
@@ -172,12 +172,12 @@ export function TeamTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Perfil</DropdownMenuItem>
-                <DropdownMenuItem>Editar Rol</DropdownMenuItem>
-                <DropdownMenuItem>Asignar a Proyecto</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Profile</DropdownMenuItem>
+                <DropdownMenuItem>Edit Role</DropdownMenuItem>
+                <DropdownMenuItem>Assign to Project</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>

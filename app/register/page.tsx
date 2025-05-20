@@ -15,45 +15,45 @@ export default function RegisterPage() {
       </Link>
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Crear una cuenta</CardTitle>
-          <CardDescription>Ingresa tus datos para registrarte en la plataforma</CardDescription>
+          <CardTitle className="text-2xl font-bold">Create an Account</CardTitle>
+          <CardDescription>Enter your details to register on the platform</CardDescription>
         </CardHeader>
         <CardContent>
           <form action="/dashboard">
             <div className="grid gap-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="first-name">Nombre</Label>
+                  <Label htmlFor="first-name">First Name</Label>
                   <Input id="first-name" type="text" required />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="last-name">Apellido</Label>
+                  <Label htmlFor="last-name">Last Name</Label>
                   <Input id="last-name" type="text" required />
                 </div>
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="email">Correo electrónico</Label>
-                <Input id="email" type="email" placeholder="nombre@ejemplo.com" required />
+                <Label htmlFor="email">Email Address</Label>
+                <Input id="email" type="email" placeholder="name@example.com" required />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="password">Contraseña</Label>
+                <Label htmlFor="password">Password</Label>
                 <Input id="password" type="password" required />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="confirm-password">Confirmar contraseña</Label>
+                <Label htmlFor="confirm-password">Confirm Password</Label>
                 <Input id="confirm-password" type="password" required />
               </div>
               <Button type="submit" className="w-full">
-                Crear cuenta
+                Create Account
               </Button>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex flex-col">
           <div className="text-center text-sm text-muted-foreground mt-2">
-            ¿Ya tienes una cuenta?{" "}
+            Already have an account?{" "}
             <Link href="/login" className="text-primary underline-offset-4 hover:underline">
-              Iniciar sesión
+              Log In
             </Link>
           </div>
         </CardFooter>

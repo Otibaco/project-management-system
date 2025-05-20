@@ -16,22 +16,22 @@ export function ResourceTable() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Nombre</TableHead>
-          <TableHead>Tipo</TableHead>
-          <TableHead>Proyecto Asignado</TableHead>
-          <TableHead>Estado</TableHead>
-          <TableHead>Utilización</TableHead>
-          <TableHead className="text-right">Acciones</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Type</TableHead>
+          <TableHead>Assigned Project</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead>Utilization</TableHead>
+          <TableHead className="text-right">Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell className="font-medium">Servidor de Desarrollo</TableCell>
+          <TableCell className="font-medium">Development Server</TableCell>
           <TableCell>Hardware</TableCell>
-          <TableCell>Implementación de CRM</TableCell>
+          <TableCell>CRM Implementation</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              En Uso
+              In Use
             </Badge>
           </TableCell>
           <TableCell>75%</TableCell>
@@ -43,23 +43,23 @@ export function ResourceTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Details</DropdownMenuItem>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Licencia Adobe Creative Cloud</TableCell>
+          <TableCell className="font-medium">Adobe Creative Cloud License</TableCell>
           <TableCell>Software</TableCell>
-          <TableCell>Rediseño de Sitio Web</TableCell>
+          <TableCell>Website Redesign</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              En Uso
+              In Use
             </Badge>
           </TableCell>
           <TableCell>90%</TableCell>
@@ -71,23 +71,23 @@ export function ResourceTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Details</DropdownMenuItem>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Sala de Reuniones A</TableCell>
-          <TableCell>Espacio</TableCell>
-          <TableCell>Múltiples</TableCell>
+          <TableCell className="font-medium">Meeting Room A</TableCell>
+          <TableCell>Space</TableCell>
+          <TableCell>Multiple</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
-              Parcial
+              Partial
             </Badge>
           </TableCell>
           <TableCell>50%</TableCell>
@@ -99,23 +99,23 @@ export function ResourceTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Details</DropdownMenuItem>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Presupuesto Marketing Q2</TableCell>
-          <TableCell>Financiero</TableCell>
-          <TableCell>Campaña de Marketing Q2</TableCell>
+          <TableCell className="font-medium">Q2 Marketing Budget</TableCell>
+          <TableCell>Financial</TableCell>
+          <TableCell>Q2 Marketing Campaign</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              En Uso
+              In Use
             </Badge>
           </TableCell>
           <TableCell>30%</TableCell>
@@ -127,23 +127,23 @@ export function ResourceTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Details</DropdownMenuItem>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Servidor de Pruebas</TableCell>
+          <TableCell className="font-medium">Testing Server</TableCell>
           <TableCell>Hardware</TableCell>
           <TableCell>-</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-              Disponible
+              Available
             </Badge>
           </TableCell>
           <TableCell>0%</TableCell>
@@ -155,12 +155,12 @@ export function ResourceTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Asignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>View Details</DropdownMenuItem>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Assign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>

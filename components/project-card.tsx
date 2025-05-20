@@ -27,9 +27,9 @@ export function ProjectCard({ title, description, progress, dueDate, team, tasks
         <p className="text-sm text-muted-foreground">{description}</p>
         <div className="mt-4 space-y-2">
           <div className="flex items-center justify-between text-sm">
-            <div>Progreso</div>
+            <div>Progress</div>
             <div className="font-medium">
-              {completedTasks}/{tasks} tareas
+              {completedTasks}/{tasks} tasks
             </div>
           </div>
           <Progress value={progress} />

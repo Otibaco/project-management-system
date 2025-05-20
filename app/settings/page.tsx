@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { BarChart3, Save } from "lucide-react"
 
@@ -26,16 +28,16 @@ export default function SettingsPage() {
               Dashboard
             </Link>
             <Link href="/projects" className="text-sm font-medium transition-colors hover:text-primary">
-              Proyectos
+              Projects
             </Link>
             <Link href="/tasks" className="text-sm font-medium transition-colors hover:text-primary">
-              Tareas
+              Tasks
             </Link>
             <Link href="/team" className="text-sm font-medium transition-colors hover:text-primary">
-              Equipo
+              Team
             </Link>
             <Link href="/resources" className="text-sm font-medium transition-colors hover:text-primary">
-              Recursos
+              Resources
             </Link>
           </nav>
           <UserNav />
@@ -47,44 +49,44 @@ export default function SettingsPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Configuración</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
           </div>
 
           <Tabs defaultValue="profile">
             <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="profile">Perfil</TabsTrigger>
-              <TabsTrigger value="account">Cuenta</TabsTrigger>
-              <TabsTrigger value="notifications">Notificaciones</TabsTrigger>
+              <TabsTrigger value="profile">Profile</TabsTrigger>
+              <TabsTrigger value="account">Account</TabsTrigger>
+              <TabsTrigger value="notifications">Notifications</TabsTrigger>
             </TabsList>
 
             <TabsContent value="profile" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Información de Perfil</CardTitle>
-                  <CardDescription>Actualiza tu información personal y preferencias</CardDescription>
+                  <CardTitle>Profile Information</CardTitle>
+                  <CardDescription>Update your personal information and preferences</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Nombre Completo</Label>
-                    <Input id="name" defaultValue="Juan Pérez" />
+                    <Label htmlFor="name">Full Name</Label>
+                    <Input id="name" defaultValue="John Doe" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Correo Electrónico</Label>
-                    <Input id="email" defaultValue="juan.perez@ejemplo.com" />
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input id="email" defaultValue="john.doe@example.com" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="title">Cargo</Label>
-                    <Input id="title" defaultValue="Gerente de Proyecto" />
+                    <Label htmlFor="title">Job Title</Label>
+                    <Input id="title" defaultValue="Project Manager" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="bio">Biografía</Label>
-                    <Textarea id="bio" placeholder="Escribe una breve biografía..." />
+                    <Label htmlFor="bio">Biography</Label>
+                    <Textarea id="bio" placeholder="Write a short biography..." />
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button>
                     <Save className="mr-2 h-4 w-4" />
-                    Guardar Cambios
+                    Save Changes
                   </Button>
                 </CardFooter>
               </Card>
@@ -93,40 +95,40 @@ export default function SettingsPage() {
             <TabsContent value="account" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Configuración de Cuenta</CardTitle>
-                  <CardDescription>Administra la configuración de tu cuenta</CardDescription>
+                  <CardTitle>Account Settings</CardTitle>
+                  <CardDescription>Manage your account settings</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="language">Idioma</Label>
-                    <Select defaultValue="es">
+                    <Label htmlFor="language">Language</Label>
+                    <Select defaultValue="en">
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecciona un idioma" />
+                        <SelectValue placeholder="Select a language" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="es">Español</SelectItem>
                         <SelectItem value="en">English</SelectItem>
-                        <SelectItem value="fr">Français</SelectItem>
+                        <SelectItem value="es">Spanish</SelectItem>
+                        <SelectItem value="fr">French</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="timezone">Zona Horaria</Label>
-                    <Select defaultValue="utc-3">
+                    <Label htmlFor="timezone">Time Zone</Label>
+                    <Select defaultValue="utc-5">
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecciona una zona horaria" />
+                        <SelectValue placeholder="Select a time zone" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="utc-3">UTC-03:00 Buenos Aires</SelectItem>
                         <SelectItem value="utc-5">UTC-05:00 Bogotá, Lima</SelectItem>
-                        <SelectItem value="utc-6">UTC-06:00 Ciudad de México</SelectItem>
+                        <SelectItem value="utc-6">UTC-06:00 Mexico City</SelectItem>
                         <SelectItem value="utc+1">UTC+01:00 Madrid</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="marketing">Recibir correos de marketing</Label>
+                      <Label htmlFor="marketing">Receive marketing emails</Label>
                       <Switch id="marketing" />
                     </div>
                   </div>
@@ -134,7 +136,7 @@ export default function SettingsPage() {
                 <CardFooter>
                   <Button>
                     <Save className="mr-2 h-4 w-4" />
-                    Guardar Cambios
+                    Save Changes
                   </Button>
                 </CardFooter>
               </Card>
@@ -143,39 +145,39 @@ export default function SettingsPage() {
             <TabsContent value="notifications" className="space-y-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Preferencias de Notificaciones</CardTitle>
-                  <CardDescription>Configura cómo y cuándo quieres recibir notificaciones</CardDescription>
+                  <CardTitle>Notification Preferences</CardTitle>
+                  <CardDescription>Configure how and when you want to receive notifications</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div>
-                        <Label>Notificaciones por correo electrónico</Label>
-                        <p className="text-sm text-muted-foreground">Recibe actualizaciones por correo electrónico</p>
+                        <Label>Email Notifications</Label>
+                        <p className="text-sm text-muted-foreground">Receive updates via email</p>
                       </div>
                       <Switch id="email-notifications" defaultChecked />
                     </div>
                     <div className="flex items-center justify-between">
                       <div>
-                        <Label>Notificaciones en la aplicación</Label>
-                        <p className="text-sm text-muted-foreground">Recibe notificaciones dentro de la aplicación</p>
+                        <Label>In-App Notifications</Label>
+                        <p className="text-sm text-muted-foreground">Receive notifications within the app</p>
                       </div>
                       <Switch id="app-notifications" defaultChecked />
                     </div>
                     <div className="flex items-center justify-between">
                       <div>
-                        <Label>Notificaciones de tareas asignadas</Label>
+                        <Label>Task Assignment Notifications</Label>
                         <p className="text-sm text-muted-foreground">
-                          Recibe notificaciones cuando se te asigna una tarea
+                          Receive notifications when a task is assigned to you
                         </p>
                       </div>
                       <Switch id="task-notifications" defaultChecked />
                     </div>
                     <div className="flex items-center justify-between">
                       <div>
-                        <Label>Notificaciones de comentarios</Label>
+                        <Label>Comment Notifications</Label>
                         <p className="text-sm text-muted-foreground">
-                          Recibe notificaciones cuando alguien comenta en tus tareas
+                          Receive notifications when someone comments on your tasks
                         </p>
                       </div>
                       <Switch id="comment-notifications" defaultChecked />
@@ -185,7 +187,7 @@ export default function SettingsPage() {
                 <CardFooter>
                   <Button>
                     <Save className="mr-2 h-4 w-4" />
-                    Guardar Cambios
+                    Save Changes
                   </Button>
                 </CardFooter>
               </Card>

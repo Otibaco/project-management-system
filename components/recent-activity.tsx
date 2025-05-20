@@ -10,10 +10,10 @@ export function RecentActivity() {
         </Avatar>
         <div className="grid gap-1">
           <p className="text-sm font-medium leading-none">
-            <span className="font-semibold">Ana Pérez</span> completó la tarea{" "}
-            <span className="font-semibold">Diseñar wireframes</span>
+            <span className="font-semibold">Ana Pérez</span> completed the task{" "}
+            <span className="font-semibold">Design wireframes</span>
           </p>
-          <p className="text-sm text-muted-foreground">Hace 2 horas</p>
+          <p className="text-sm text-muted-foreground">2 hours ago</p>
         </div>
       </div>
       <div className="flex items-start gap-4">
@@ -23,10 +23,10 @@ export function RecentActivity() {
         </Avatar>
         <div className="grid gap-1">
           <p className="text-sm font-medium leading-none">
-            <span className="font-semibold">Carlos García</span> comentó en{" "}
-            <span className="font-semibold">Implementación de API</span>
+            <span className="font-semibold">Carlos García</span> commented on{" "}
+            <span className="font-semibold">API Implementation</span>
           </p>
-          <p className="text-sm text-muted-foreground">Hace 4 horas</p>
+          <p className="text-sm text-muted-foreground">4 hours ago</p>
         </div>
       </div>
       <div className="flex items-start gap-4">
@@ -36,10 +36,10 @@ export function RecentActivity() {
         </Avatar>
         <div className="grid gap-1">
           <p className="text-sm font-medium leading-none">
-            <span className="font-semibold">María Rodríguez</span> creó un nuevo proyecto{" "}
-            <span className="font-semibold">Campaña de Marketing Q2</span>
+            <span className="font-semibold">María Rodríguez</span> created a new project{" "}
+            <span className="font-semibold">Q2 Marketing Campaign</span>
           </p>
-          <p className="text-sm text-muted-foreground">Hace 6 horas</p>
+          <p className="text-sm text-muted-foreground">6 hours ago</p>
         </div>
       </div>
       <div className="flex items-start gap-4">
@@ -49,10 +49,10 @@ export function RecentActivity() {
         </Avatar>
         <div className="grid gap-1">
           <p className="text-sm font-medium leading-none">
-            <span className="font-semibold">Juan Pérez</span> asignó{" "}
-            <span className="font-semibold">3 nuevas tareas</span> a <span className="font-semibold">Ana Pérez</span>
+            <span className="font-semibold">Juan Pérez</span> assigned{" "}
+            <span className="font-semibold">3 new tasks</span> to <span className="font-semibold">Ana Pérez</span>
           </p>
-          <p className="text-sm text-muted-foreground">Hace 8 horas</p>
+          <p className="text-sm text-muted-foreground">8 hours ago</p>
         </div>
       </div>
     </div>

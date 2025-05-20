@@ -13,26 +13,26 @@ const options = {
     },
     title: {
       display: true,
-      text: "Asignación de Recursos por Proyecto",
+      text: "Resource Allocation by Project",
     },
   },
 }
 
 const data = {
-  labels: ["Rediseño de Sitio Web", "Implementación de CRM", "Campaña de Marketing Q2", "Desarrollo de App Móvil"],
+  labels: ["Website Redesign", "CRM Implementation", "Q2 Marketing Campaign", "Mobile App Development"],
   datasets: [
     {
-      label: "Recursos Humanos",
+      label: "Human Resources",
       data: [12, 19, 3, 5],
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
     {
-      label: "Recursos Materiales",
+      label: "Material Resources",
       data: [2, 3, 20, 5],
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
     {
-      label: "Recursos Financieros",
+      label: "Financial Resources",
       data: [3, 10, 13, 15],
       backgroundColor: "rgba(75, 192, 192, 0.5)",
     },

@@ -3,13 +3,14 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { DataProvider } from "@/contexts/DataContext"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "ProjectPro",
-  description: "Sistema de Gestión de Proyectos Empresariales",
-    generator: 'v0.dev'
+  description: "Enterprise Project Management System",
 }
 
 export default function RootLayout({
@@ -18,9 +19,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className={inter.className} cz-shortcut-listen="true">
-        <DataProvider>{children}</DataProvider>
+        <DataProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </DataProvider>
       </body>
     </html>
   )

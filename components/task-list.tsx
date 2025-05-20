@@ -19,12 +19,12 @@ export function TaskList() {
       <TableHeader>
         <TableRow>
           <TableHead className="w-[50px]"></TableHead>
-          <TableHead>Tarea</TableHead>
-          <TableHead>Proyecto</TableHead>
-          <TableHead>Prioridad</TableHead>
-          <TableHead>Fecha Límite</TableHead>
-          <TableHead>Asignado a</TableHead>
-          <TableHead className="text-right">Acciones</TableHead>
+          <TableHead>Task</TableHead>
+          <TableHead>Project</TableHead>
+          <TableHead>Priority</TableHead>
+          <TableHead>Deadline</TableHead>
+          <TableHead>Assigned To</TableHead>
+          <TableHead className="text-right">Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -32,11 +32,11 @@ export function TaskList() {
           <TableCell>
             <Checkbox id="task1" />
           </TableCell>
-          <TableCell className="font-medium">Diseñar wireframes para la página de inicio</TableCell>
-          <TableCell>Rediseño de Sitio Web</TableCell>
+          <TableCell className="font-medium">Design wireframes for the homepage</TableCell>
+          <TableCell>Website Redesign</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
-              Alta
+              High
             </Badge>
           </TableCell>
           <TableCell>
@@ -62,11 +62,11 @@ export function TaskList() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -75,11 +75,11 @@ export function TaskList() {
           <TableCell>
             <Checkbox id="task2" />
           </TableCell>
-          <TableCell className="font-medium">Implementar autenticación de usuarios</TableCell>
-          <TableCell>Implementación de CRM</TableCell>
+          <TableCell className="font-medium">Implement user authentication</TableCell>
+          <TableCell>CRM Implementation</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
-              Media
+              Medium
             </Badge>
           </TableCell>
           <TableCell>
@@ -105,11 +105,11 @@ export function TaskList() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -118,11 +118,11 @@ export function TaskList() {
           <TableCell>
             <Checkbox id="task3" />
           </TableCell>
-          <TableCell className="font-medium">Crear contenido para redes sociales</TableCell>
-          <TableCell>Campaña de Marketing Q2</TableCell>
+          <TableCell className="font-medium">Create content for social media</TableCell>
+          <TableCell>Q2 Marketing Campaign</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              Baja
+              Low
             </Badge>
           </TableCell>
           <TableCell>
@@ -148,11 +148,11 @@ export function TaskList() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
-                <DropdownMenuItem>Editar</DropdownMenuItem>
-                <DropdownMenuItem>Reasignar</DropdownMenuItem>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Reassign</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-destructive">Eliminar</DropdownMenuItem>
+                <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>

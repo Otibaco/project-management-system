@@ -15,36 +15,36 @@ export default function LoginPage() {
       </Link>
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Iniciar Sesión</CardTitle>
-          <CardDescription>Ingresa tus credenciales para acceder a tu cuenta</CardDescription>
+          <CardTitle className="text-2xl font-bold">Log In</CardTitle>
+          <CardDescription>Enter your credentials to access your account</CardDescription>
         </CardHeader>
         <CardContent>
           <form action="/dashboard">
             <div className="grid gap-4">
               <div className="grid gap-2">
-                <Label htmlFor="email">Correo electrónico</Label>
-                <Input id="email" type="email" placeholder="nombre@ejemplo.com" required />
+                <Label htmlFor="email">Email Address</Label>
+                <Input id="email" type="email" placeholder="name@example.com" required />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Contraseña</Label>
+                  <Label htmlFor="password">Password</Label>
                   <Link href="/forgot-password" className="text-sm text-primary underline-offset-4 hover:underline">
-                    ¿Olvidaste tu contraseña?
+                    Forgot your password?
                   </Link>
                 </div>
                 <Input id="password" type="password" required />
               </div>
               <Button type="submit" className="w-full">
-                Iniciar Sesión
+                Log In
               </Button>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex flex-col">
           <div className="text-center text-sm text-muted-foreground mt-2">
-            ¿No tienes una cuenta?{" "}
+            Don't have an account?{" "}
             <Link href="/register" className="text-primary underline-offset-4 hover:underline">
-              Regístrate
+              Sign Up
             </Link>
           </div>
         </CardFooter>

@@ -2,42 +2,42 @@
 
 import { useState } from "react"
 import { format, startOfWeek, endOfWeek, eachDayOfInterval, isSameMonth, isSameDay, addDays, subDays } from "date-fns"
-import { es } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 
-// Datos de ejemplo para eventos
+// Example data for events
 const events = [
   {
     id: 1,
-    title: "Reunión de Planificación",
-    project: "Campaña de Marketing Q2",
+    title: "Planning Meeting",
+    project: "Q2 Marketing Campaign",
     date: new Date(2025, 2, 5),
     time: "10:00 - 11:30",
   },
   {
     id: 2,
-    title: "Revisión de Diseño",
-    project: "Rediseño de Sitio Web",
+    title: "Design Review",
+    project: "Website Redesign",
     date: new Date(2025, 2, 10),
     time: "14:00 - 15:00",
   },
   {
     id: 3,
-    title: "Demo de Producto",
-    project: "Implementación de CRM",
+    title: "Product Demo",
+    project: "CRM Implementation",
     date: new Date(2025, 2, 15),
     time: "11:00 - 12:00",
   },
   {
     id: 4,
-    title: "Retrospectiva Sprint",
-    project: "Desarrollo de App Móvil",
+    title: "Sprint Retrospective",
+    project: "Mobile App Development",
     date: new Date(2025, 2, 20),
     time: "16:00 - 17:00",
   },
   {
     id: 5,
-    title: "Presentación a Stakeholders",
-    project: "Rediseño de Sitio Web",
+    title: "Stakeholder Presentation",
+    project: "Website Redesign",
     date: new Date(2025, 2, 25),
     time: "09:30 - 11:00",
   },
@@ -55,7 +55,7 @@ export function CalendarView() {
 
     return (
       <div className="grid grid-cols-7 gap-1">
-        {["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"].map((day) => (
+        {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
           <div key={day} className="text-center font-medium p-2">
             {day}
           </div>
@@ -93,7 +93,7 @@ export function CalendarView() {
       <div className="grid grid-cols-7 gap-1">
         {days.map((day) => (
           <div key={day.toString()} className="border p-2">
-            <div className="font-medium">{format(day, "EEEE", { locale: es })}</div>
+            <div className="font-medium">{format(day, "EEEE", { locale: enUS })}</div>
             <div className="text-sm">{format(day, "d MMM")}</div>
             {events
               .filter((event) => isSameDay(event.date, day))
@@ -113,7 +113,7 @@ export function CalendarView() {
 
     return (
       <div className="border p-4">
-        <h3 className="font-bold text-lg mb-4">{format(currentDate, "EEEE, d MMMM yyyy", { locale: es })}</h3>
+        <h3 className="font-bold text-lg mb-4">{format(currentDate, "EEEE, d MMMM yyyy", { locale: enUS })}</h3>
         {dayEvents.length > 0 ? (
           dayEvents.map((event) => (
             <div key={event.id} className="mb-2 p-2 bg-blue-100 rounded">
@@ -123,7 +123,7 @@ export function CalendarView() {
             </div>
           ))
         ) : (
-          <p>No hay eventos programados para este día.</p>
+          <p>No events scheduled for this day.</p>
         )}
       </div>
     )
@@ -133,15 +133,15 @@ export function CalendarView() {
     <div>
       <div className="mb-4 flex justify-between items-center">
         <button onClick={() => setCurrentDate((prev) => subDays(prev, view === "day" ? 1 : view === "week" ? 7 : 30))}>
-          Anterior
+          Previous
         </button>
         <select value={view} onChange={(e) => setView(e.target.value)}>
-          <option value="month">Mes</option>
-          <option value="week">Semana</option>
-          <option value="day">Día</option>
+          <option value="month">Month</option>
+          <option value="week">Week</option>
+          <option value="day">Day</option>
         </select>
         <button onClick={() => setCurrentDate((prev) => addDays(prev, view === "day" ? 1 : view === "week" ? 7 : 30))}>
-          Siguiente
+          Next
         </button>
       </div>
       {view === "month" && renderMonthView()}

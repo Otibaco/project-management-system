@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { BarChart3 } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,16 +22,16 @@ export default function AnalyticsPage() {
               Dashboard
             </Link>
             <Link href="/projects" className="text-sm font-medium transition-colors hover:text-primary">
-              Proyectos
+              Projects
             </Link>
             <Link href="/tasks" className="text-sm font-medium transition-colors hover:text-primary">
-              Tareas
+              Tasks
             </Link>
             <Link href="/team" className="text-sm font-medium transition-colors hover:text-primary">
-              Equipo
+              Team
             </Link>
             <Link href="/resources" className="text-sm font-medium transition-colors hover:text-primary">
-              Recursos
+              Resources
             </Link>
           </nav>
           <UserNav />
@@ -41,14 +43,14 @@ export default function AnalyticsPage() {
         </aside>
         <main className="flex flex-col gap-6 p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <h1 className="text-3xl font-bold tracking-tight">Analíticas</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Analytics</h1>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle>Asignación de Recursos</CardTitle>
-                <CardDescription>Distribución de recursos por proyecto</CardDescription>
+                <CardTitle>Resource Allocation</CardTitle>
+                <CardDescription>Distribution of resources by project</CardDescription>
               </CardHeader>
               <CardContent>
                 <ResourceAllocationChart />
@@ -57,8 +59,8 @@ export default function AnalyticsPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Métricas de Recursos</CardTitle>
-                <CardDescription>Utilización y eficiencia de recursos a lo largo del tiempo</CardDescription>
+                <CardTitle>Resource Metrics</CardTitle>
+                <CardDescription>Utilization and efficiency of resources over time</CardDescription>
               </CardHeader>
               <CardContent>
                 <ResourceMetricsChart />
@@ -66,7 +68,7 @@ export default function AnalyticsPage() {
             </Card>
           </div>
 
-          {/* Aquí puedes agregar más secciones de análisis según sea necesario */}
+          {/* Add more analytics sections here as needed */}
         </main>
       </div>
     </div>

@@ -4,8 +4,8 @@ export function ProjectGrid() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <ProjectCard
-        title="Rediseño de Sitio Web"
-        description="Actualización completa del sitio web corporativo"
+        title="Website Redesign"
+        description="Complete update of the corporate website"
         progress={75}
         dueDate="15 Mar 2025"
         team={5}
@@ -13,17 +13,17 @@ export function ProjectGrid() {
         completedTasks={18}
       />
       <ProjectCard
-        title="Implementación de CRM"
-        description="Integración del nuevo sistema CRM con los sistemas existentes"
+        title="CRM Implementation"
+        description="Integration of the new CRM system with existing systems"
         progress={45}
-        dueDate="30 Abr 2025"
+        dueDate="30 Apr 2025"
         team={8}
         tasks={42}
         completedTasks={19}
       />
       <ProjectCard
-        title="Campaña de Marketing Q2"
-        description="Planificación y ejecución de la campaña del segundo trimestre"
+        title="Q2 Marketing Campaign"
+        description="Planning and execution of the second-quarter campaign"
         progress={20}
         dueDate="10 May 2025"
         team={4}
@@ -31,8 +31,8 @@ export function ProjectGrid() {
         completedTasks={4}
       />
       <ProjectCard
-        title="Desarrollo de App Móvil"
-        description="Creación de una aplicación móvil para clientes"
+        title="Mobile App Development"
+        description="Creation of a mobile application for clients"
         progress={60}
         dueDate="22 Jun 2025"
         team={6}
@@ -40,8 +40,8 @@ export function ProjectGrid() {
         completedTasks={22}
       />
       <ProjectCard
-        title="Migración de Base de Datos"
-        description="Migración de la base de datos a una nueva infraestructura"
+        title="Database Migration"
+        description="Migration of the database to a new infrastructure"
         progress={90}
         dueDate="5 Mar 2025"
         team={3}
@@ -49,10 +49,10 @@ export function ProjectGrid() {
         completedTasks={13}
       />
       <ProjectCard
-        title="Optimización de SEO"
-        description="Mejora del posicionamiento en motores de búsqueda"
+        title="SEO Optimization"
+        description="Improvement of search engine rankings"
         progress={30}
-        dueDate="18 Abr 2025"
+        dueDate="18 Apr 2025"
         team={2}
         tasks={20}
         completedTasks={6}

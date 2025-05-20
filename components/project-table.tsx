@@ -18,20 +18,20 @@ export function ProjectTable() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Nombre</TableHead>
-          <TableHead>Estado</TableHead>
-          <TableHead>Progreso</TableHead>
-          <TableHead>Fecha Límite</TableHead>
-          <TableHead>Metodología</TableHead>
-          <TableHead className="text-right">Acciones</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead>Progress</TableHead>
+          <TableHead>Deadline</TableHead>
+          <TableHead>Methodology</TableHead>
+          <TableHead className="text-right">Actions</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell className="font-medium">Rediseño de Sitio Web</TableCell>
+          <TableCell className="font-medium">Website Redesign</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-              En Progreso
+              In Progress
             </Badge>
           </TableCell>
           <TableCell>
@@ -46,7 +46,7 @@ export function ProjectTable() {
               <span className="text-sm">15 Mar 2025</span>
             </div>
           </TableCell>
-          <TableCell>Ágil (RUP)</TableCell>
+          <TableCell>Agile (RUP)</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -55,29 +55,29 @@ export function ProjectTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuItem>
                   <Edit className="mr-2 h-4 w-4" />
-                  Editar
+                  Edit
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <CheckCircle2 className="mr-2 h-4 w-4" />
-                  Marcar como Completado
+                  Mark as Completed
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="text-destructive">
                   <Trash className="mr-2 h-4 w-4" />
-                  Eliminar
+                  Delete
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Implementación de CRM</TableCell>
+          <TableCell className="font-medium">CRM Implementation</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
-              Planificación
+              Planning
             </Badge>
           </TableCell>
           <TableCell>
@@ -89,10 +89,10 @@ export function ProjectTable() {
           <TableCell>
             <div className="flex items-center gap-1">
               <Clock className="h-3 w-3 text-muted-foreground" />
-              <span className="text-sm">30 Abr 2025</span>
+              <span className="text-sm">30 Apr 2025</span>
             </div>
           </TableCell>
-          <TableCell>Cascada</TableCell>
+          <TableCell>Waterfall</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -101,29 +101,29 @@ export function ProjectTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuItem>
                   <Edit className="mr-2 h-4 w-4" />
-                  Editar
+                  Edit
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <CheckCircle2 className="mr-2 h-4 w-4" />
-                  Marcar como Completado
+                  Mark as Completed
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="text-destructive">
                   <Trash className="mr-2 h-4 w-4" />
-                  Eliminar
+                  Delete
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Campaña de Marketing Q2</TableCell>
+          <TableCell className="font-medium">Q2 Marketing Campaign</TableCell>
           <TableCell>
             <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-              Nuevo
+              New
             </Badge>
           </TableCell>
           <TableCell>
@@ -138,7 +138,7 @@ export function ProjectTable() {
               <span className="text-sm">10 May 2025</span>
             </div>
           </TableCell>
-          <TableCell>Basado en Prototipo</TableCell>
+          <TableCell>Prototype-Based</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -147,19 +147,19 @@ export function ProjectTable() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuItem>
                   <Edit className="mr-2 h-4 w-4" />
-                  Editar
+                  Edit
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <CheckCircle2 className="mr-2 h-4 w-4" />
-                  Marcar como Completado
+                  Mark as Completed
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="text-destructive">
                   <Trash className="mr-2 h-4 w-4" />
-                  Eliminar
+                  Delete
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

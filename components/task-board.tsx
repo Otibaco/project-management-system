@@ -11,7 +11,7 @@ export function TaskBoard() {
         <div className="font-medium text-sm flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-            Pendiente
+            Pending
             <Badge variant="outline" className="ml-2">
               3
             </Badge>
@@ -22,8 +22,8 @@ export function TaskBoard() {
         </div>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Diseñar wireframes para la página de inicio</CardTitle>
-            <CardDescription className="text-xs">Rediseño de Sitio Web</CardDescription>
+            <CardTitle className="text-sm">Design wireframes for the homepage</CardTitle>
+            <CardDescription className="text-xs">Website Redesign</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">
@@ -38,8 +38,8 @@ export function TaskBoard() {
         </Card>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Implementar autenticación de usuarios</CardTitle>
-            <CardDescription className="text-xs">Implementación de CRM</CardDescription>
+            <CardTitle className="text-sm">Implement user authentication</CardTitle>
+            <CardDescription className="text-xs">CRM Implementation</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">
@@ -54,8 +54,8 @@ export function TaskBoard() {
         </Card>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Crear contenido para redes sociales</CardTitle>
-            <CardDescription className="text-xs">Campaña de Marketing Q2</CardDescription>
+            <CardTitle className="text-sm">Create content for social media</CardTitle>
+            <CardDescription className="text-xs">Q2 Marketing Campaign</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">
@@ -73,7 +73,7 @@ export function TaskBoard() {
         <div className="font-medium text-sm flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
-            En Progreso
+            In Progress
             <Badge variant="outline" className="ml-2">
               2
             </Badge>
@@ -84,8 +84,8 @@ export function TaskBoard() {
         </div>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Desarrollar API para integración con CRM</CardTitle>
-            <CardDescription className="text-xs">Implementación de CRM</CardDescription>
+            <CardTitle className="text-sm">Develop API for CRM integration</CardTitle>
+            <CardDescription className="text-xs">CRM Implementation</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">
@@ -100,8 +100,8 @@ export function TaskBoard() {
         </Card>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Optimizar imágenes del sitio web</CardTitle>
-            <CardDescription className="text-xs">Rediseño de Sitio Web</CardDescription>
+            <CardTitle className="text-sm">Optimize website images</CardTitle>
+            <CardDescription className="text-xs">Website Redesign</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">
@@ -119,7 +119,7 @@ export function TaskBoard() {
         <div className="font-medium text-sm flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-green-500"></div>
-            Completado
+            Completed
             <Badge variant="outline" className="ml-2">
               2
             </Badge>
@@ -130,8 +130,8 @@ export function TaskBoard() {
         </div>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Definir requisitos del proyecto</CardTitle>
-            <CardDescription className="text-xs">Rediseño de Sitio Web</CardDescription>
+            <CardTitle className="text-sm">Define project requirements</CardTitle>
+            <CardDescription className="text-xs">Website Redesign</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">
@@ -146,8 +146,8 @@ export function TaskBoard() {
         </Card>
         <Card>
           <CardHeader className="p-3">
-            <CardTitle className="text-sm">Crear plan de proyecto</CardTitle>
-            <CardDescription className="text-xs">Campaña de Marketing Q2</CardDescription>
+            <CardTitle className="text-sm">Create project plan</CardTitle>
+            <CardDescription className="text-xs">Q2 Marketing Campaign</CardDescription>
           </CardHeader>
           <CardFooter className="p-3 pt-0 flex items-center justify-between">
             <div className="flex items-center gap-1">

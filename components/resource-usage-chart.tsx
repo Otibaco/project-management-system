@@ -1,15 +1,15 @@
 "use client"
 
 export function ResourceUsageChart() {
-  // En un caso real, aquí se implementaría un gráfico con una biblioteca como recharts o chart.js
-  // Para este ejemplo, usaremos una representación visual simple
+  // In a real case, a chart would be implemented here using a library like recharts or chart.js
+  // For this example, we will use a simple visual representation
 
   const projects = [
-    { name: "Rediseño de Sitio Web", percentage: 35, color: "bg-blue-500" },
-    { name: "Implementación de CRM", percentage: 25, color: "bg-green-500" },
-    { name: "Campaña de Marketing Q2", percentage: 15, color: "bg-yellow-500" },
-    { name: "Desarrollo de App Móvil", percentage: 20, color: "bg-purple-500" },
-    { name: "Otros", percentage: 5, color: "bg-gray-500" },
+    { name: "Website Redesign", percentage: 35, color: "bg-blue-500" },
+    { name: "CRM Implementation", percentage: 25, color: "bg-green-500" },
+    { name: "Q2 Marketing Campaign", percentage: 15, color: "bg-yellow-500" },
+    { name: "Mobile App Development", percentage: 20, color: "bg-purple-500" },
+    { name: "Others", percentage: 5, color: "bg-gray-500" },
   ]
 
   return (
