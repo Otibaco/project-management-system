@@ -1,25 +1,52 @@
 "use client"
 import Link from "next/link"
-import { useState } from "react"
-import { BarChart3, Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
+import { BarChart3, Menu, X, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { UserNav } from "@/components/user-nav" // Import your UserNav component
+import { UserNav } from "@/components/user-nav"
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [theme, setTheme] = useState<"light" | "dark">("light")
+
+  // On mount, check localStorage or system preference
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme")
+      if (stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        setTheme("dark")
+        document.documentElement.classList.add("dark")
+      } else {
+        setTheme("light")
+        document.documentElement.classList.remove("dark")
+      }
+    }
+  }, [])
+
+  // Toggle theme handler
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light"
+    setTheme(newTheme)
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+      localStorage.setItem("theme", "light")
+    }
+  }
 
   // TODO: Replace this with your real authentication logic
   const isLoggedIn = false // Set to true to test UserNav, or use your auth state
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
+    <header className="sticky top-0 z-50 w-full border-b bg-white dark:bg-zinc-900 transition-colors">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl">
           <BarChart3 className="h-6 w-6" />
           <span>ProjectPro</span>
         </Link>
-
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 flex-1 justify-center">
@@ -31,8 +58,21 @@ export default function Navbar() {
           <Link href="/resources" className="text-sm font-medium transition-colors hover:text-primary">Resources</Link>
         </nav>
 
-        {/* Desktop UserNav or Login */}
+        {/* Desktop UserNav or Login + Theme Toggle */}
         <div className="hidden md:flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Toggle Theme"
+            onClick={toggleTheme}
+            className="transition-colors"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5 text-yellow-400" />
+            ) : (
+              <Moon className="h-5 w-5 text-zinc-700" />
+            )}
+          </Button>
           {isLoggedIn ? (
             <UserNav />
           ) : (
@@ -42,9 +82,21 @@ export default function Navbar() {
           )}
         </div>
 
-
-        {/* Mobile UserNav or Login + Menu */}
+        {/* Mobile UserNav or Login + Theme Toggle + Menu */}
         <div className="flex items-center gap-2 md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Toggle Theme"
+            onClick={toggleTheme}
+            className="transition-colors"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5 text-yellow-400" />
+            ) : (
+              <Moon className="h-5 w-5 text-zinc-700" />
+            )}
+          </Button>
           {isLoggedIn ? (
             <UserNav />
           ) : (
@@ -73,7 +125,7 @@ export default function Navbar() {
             onClick={() => setMobileNavOpen(false)}
           />
           {/* Drawer */}
-          <div className="relative bg-white w-72 max-w-[90vw] h-full shadow-lg flex flex-col animate-slide-in-right ml-auto">
+          <div className="relative bg-white dark:bg-zinc-900 w-72 max-w-[90vw] h-full shadow-lg flex flex-col animate-slide-in-right ml-auto">
             <div className="flex items-center justify-between p-4 border-b">
               <span className="font-bold text-xl">Menu</span>
               <Button
@@ -93,13 +145,13 @@ export default function Navbar() {
               <Link href="/team" onClick={() => setMobileNavOpen(false)} className="text-base font-medium py-2 px-2 rounded hover:bg-muted transition">Team</Link>
               <Link href="/resources" onClick={() => setMobileNavOpen(false)} className="text-base font-medium py-2 px-2 rounded hover:bg-muted transition">Resources</Link>
 
+            
 
               {!isLoggedIn && (
-                <Link href="/register" className="mt-4">
+                <Link href="/register" className="mt-2">
                   <Button className="w-full" onClick={() => setMobileNavOpen(false)}>Register</Button>
                 </Link>
               )}
-
             </nav>
           </div>
         </div>

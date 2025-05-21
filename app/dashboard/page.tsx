@@ -16,17 +16,17 @@ export default function DashboardPage() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <div className="grid flex-1 md:grid-cols-[220px_1fr]">
+    <div className="flex min-h-screen flex-col bg-white dark:bg-zinc-900 transition-colors">
+      <div className="flex-1 grid md:grid-cols-[220px_1fr]">
         {/* Sidebar for desktop */}
-        <aside className="hidden border-r bg-muted/40 md:block">
-          <DashboardNav />
+        <aside className="hidden md:block border-r bg-muted/40 dark:bg-zinc-900">
+          <DashboardNav className="h-full" />
         </aside>
 
         {/* Main Section */}
-        <main className="flex flex-col gap-6 p-4 md:p-6">
+        <main className="flex flex-col gap-6 p-4 sm:p-6 md:p-8 w-full max-w-7xl mx-auto">
           {/* Page Header */}
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-between gap-2 flex-wrap">
             {/* Left: Menu (mobile) and Dashboard text */}
             <div className="flex items-center gap-2">
               {/* Mobile nav button */}
@@ -46,14 +46,14 @@ export default function DashboardPage() {
             <Link href="/projects/new">
               <Button>
                 <Plus className="mr-2 h-4 w-4" />
-                <span className="sm:hidden">New Project</span>
+                <span className="sm:inline">New Project</span>
               </Button>
             </Link>
           </div>
 
           {/* Tabs Section */}
-          <Tabs defaultValue="overview">
-            <TabsList className="flex flex-wrap gap-2">
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="flex flex-wrap gap-2 w-full">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="analytics">Analytics</TabsTrigger>
               <TabsTrigger value="reports">Reports</TabsTrigger>
@@ -61,7 +61,7 @@ export default function DashboardPage() {
 
             {/* Overview Tab */}
             <TabsContent value="overview" className="space-y-6">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">Active Projects</CardTitle>
@@ -104,8 +104,8 @@ export default function DashboardPage() {
                 </Card>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-7">
-                <Card className="col-span-4">
+              <div className="grid gap-4 grid-cols-1 lg:grid-cols-7">
+                <Card className="lg:col-span-4">
                   <CardHeader>
                     <CardTitle>Recent Projects</CardTitle>
                     <CardDescription>You currently have 12 active projects</CardDescription>
@@ -140,7 +140,7 @@ export default function DashboardPage() {
                     />
                   </CardContent>
                 </Card>
-                <Card className="col-span-3">
+                <Card className="lg:col-span-3">
                   <CardHeader>
                     <CardTitle>Recent Activity</CardTitle>
                     <CardDescription>Latest updates on your projects</CardDescription>
@@ -245,19 +245,12 @@ export default function DashboardPage() {
             onClick={() => setMobileNavOpen(false)}
           />
           {/* Drawer */}
-          <div className="relative bg-white w-64 h-full shadow-lg flex flex-col animate-slide-in-left">
-            <div className="flex items-center justify-between p-4 border-b">
-              <span className="font-bold text-xl">Menu</span>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Close Menu"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
-            <DashboardNav />
+          <div className="relative w-4/5 max-w-xs h-full shadow-lg flex flex-col animate-slide-in-left bg-white dark:bg-zinc-900 transition-colors">
+            <DashboardNav
+              showHeader
+              onClose={() => setMobileNavOpen(false)}
+              className="h-full"
+            />
           </div>
         </div>
       )}
